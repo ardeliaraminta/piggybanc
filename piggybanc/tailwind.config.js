@@ -3,8 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        'sans':['Inter'],
-        'Inter':['Inter']
+        Inter: ['Inter', 'sans-serif']
       },
     },
   },

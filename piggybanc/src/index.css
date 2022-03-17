@@ -2,7 +2,7 @@
   font-family: 'Inter';
   src: url('/public/fonts/Inter/Inter-Regular.ttf') format('ttf');
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
