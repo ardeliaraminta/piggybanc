@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [open, setOpen] = useState(true)
@@ -33,7 +34,7 @@ function Navbar() {
         <a className='px-5 font-[600] text-[15px] sm:text-[20px] hover:scale-105 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1'>Overview</a>
         <a className='px-5 font-[600] text-[15px] sm:text-[20px] hover:scale-105 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1'>Why Us?</a>
         <a className='px-5 font-[600] text-[15px] sm:text-[20px] hover:scale-105 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1'>Team</a>
-        <div className='px-5 hover:scale-10 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1 pb-3 '><Button variant="contained" classname="text-[13px] sm:text-[20px]" size="small" sx={{paddingX:3, fontFamily:'Inter', fontWeight:600,}}>Login</Button></div>
+        <Link to="/login"><div className='px-5 hover:scale-10 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1 pb-3 '><Button variant="contained" classname="text-[13px] sm:text-[20px]" size="small" sx={{paddingX:3, fontFamily:'Inter', fontWeight:600,}}>Login</Button></div></Link>
       </div>
     </div>
     </nav>
