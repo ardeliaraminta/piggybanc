@@ -1,6 +1,6 @@
 import logo from '../logo.svg';
 import Navbar from '../components/landing/navbar';
-function Landing() {
+const Landing = () => {
   return (
     
     <div className="bg-[#08143D] h-[100%] w-[100%]">
