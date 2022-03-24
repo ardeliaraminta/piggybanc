@@ -1,5 +1,9 @@
 import logo from '../logo.svg';
 import Navbar from '../components/landing/navbar';
+import Hero from '../components/landing/hero';
+import Why from '../components/landing/why';
+import Team from '../components/landing/team';
+import Footer from '../components/landing/footer';
 const Landing = () => {
   return (
     
@@ -11,6 +15,10 @@ const Landing = () => {
 
       <div className='relative z-20 font-Inter text-white'>
           <Navbar/>
+          <Hero/>
+          <Why/>
+          <Team/>
+          <Footer/>
       </div>
 
       <div className='h-[4000px] border-1'>

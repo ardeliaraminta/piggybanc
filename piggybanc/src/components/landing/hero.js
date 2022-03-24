@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react'
 
-export class Navbar extends Component {
-    render() {
-      return (
-          <>
-          </>
-        );
-    }
-  }
+export default function Hero() {
+  return (
+    <div>hero</div>
+  )
+}
