@@ -8,6 +8,7 @@ import Inter from './assets/Inter/Inter-Regular.ttf';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
 import { useState } from 'react';
+import SignUp from './pages/signup';
 
 const theme = createTheme({
     palette: {
@@ -47,6 +48,7 @@ export default function App() {
             <Route path="/" element={<Landing/>}/>
             <Route path="/dashboard" element={<Dashboard/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/signup" element={<SignUp/>}/>
         </Routes>
       </Router>
   )
