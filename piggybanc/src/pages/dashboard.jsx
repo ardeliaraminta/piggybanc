@@ -1,7 +1,7 @@
 import { Button } from '@mui/material'
 import {React, useState} from 'react'
 import control from "../../src/assets/control.png"
-import logo from "../../src/assets/navbarLogo.png"
+import logo from "../../src/assets/piggylogo.png"
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase-config'
 import { useNavigate } from 'react-router-dom'
