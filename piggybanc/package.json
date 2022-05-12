@@ -14,8 +14,12 @@
     "firebase": "^9.6.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "recharts": "^2.1.9",
+    "scrollreveal": "^4.0.9",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
