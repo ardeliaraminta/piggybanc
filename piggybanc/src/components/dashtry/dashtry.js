@@ -1,6 +1,5 @@
 import control from "../../assets/control.png"
 import piggybanc from "../../assets/piggylogo.png"
-import dashboard from "../../assets/dashboard.png"
 import Content from "./content";
 
 import { useState } from "react";
@@ -28,7 +27,7 @@ const DashTry = () => {
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
-        <div className="flex gap-x-4 items-center">
+        <div className="flex gap-x-4 items-center ">
           <img
             src={piggybanc}
             className={`cursor-pointer duration-500 ${
@@ -47,12 +46,12 @@ const DashTry = () => {
           {Menus.map((Menu, index) => (
             <li
               key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+              className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-11" : "mt-2"} ${
                 index === 0 && "bg-light-white"
               } `}
             >
-              <img src={`../../assets/${Menus.src}.png`} />
+              <img src={`./src/assets/${Menus.src}.png`} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 {Menu.title}
               </span>
@@ -79,4 +78,3 @@ const DashTry = () => {
   );
 };
 export default DashTry;
-
