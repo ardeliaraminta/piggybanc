@@ -1,7 +1,9 @@
 import React from 'react'
 import './Right.css'
-import Updates from '../Updates/Updates'
-import Expenses from '../Expenses/Expenses'
+import Updates from './Updates'
+import Expenses from './Expenses'
+
+
 
 const Right = () => {
   return (

@@ -14,10 +14,6 @@ export const SidebarData =[
         heading: "Transaction",
     },
     {
-        icon: AnalyticsIcon,
-        heading: "Reports",
-    },
-    {
         icon: PersonIcon,
         heading: "Profile",
     },
