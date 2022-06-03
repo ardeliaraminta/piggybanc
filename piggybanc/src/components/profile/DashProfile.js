@@ -26,7 +26,12 @@ const DashProfile = () => {
         <div className='grid md:grid-cols-3 gap-6 px-2 text-center'>
             <div className='border py-8 rounded-xl shadow-xl' >
                 <p className='text-6xl font-bold text-indigo-600'></p>
-                <p className='text-gray-400 mt-2'>Monique</p>
+                <p className='text-gray-400 mt-2'>
+
+
+
+                    
+                </p>
 
             
 

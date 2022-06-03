@@ -10,6 +10,7 @@ import Dashboard from './pages/dashboard';
 import { useState } from 'react';
 import SignUp from './pages/signup';
 import Profile from './pages/profile';
+import Transaction from './pages/transaction';
 
 const theme = createTheme({
     palette: {
@@ -51,6 +52,7 @@ export default function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="/transaction" element={<Transaction/>}/>
         </Routes>
       </Router>
   )

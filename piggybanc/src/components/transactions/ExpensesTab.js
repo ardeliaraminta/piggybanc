@@ -6,7 +6,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./Table.css";
 
 function createData(date, details, category, amount, addedBy) {
   return { date, details, category, amount, addedBy};
@@ -43,7 +42,7 @@ const makeStyle=(status)=>{
 
 export default function BasicTable() {
   return (
-      <div className="Table">
+      <div className="text-white">
       <h3>Expenses History</h3>
         <TableContainer
           component={Paper}

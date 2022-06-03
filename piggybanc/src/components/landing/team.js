@@ -1,5 +1,6 @@
 import React from 'react'
 import linkedin from '../../assets/linkedin.png';
+import github from '../../assets/github.png';
 // to do list : make it mobile friendly 
 
 export default function Team() {
@@ -18,6 +19,7 @@ export default function Team() {
                 <p className='text-gray-400 mt-2'>Monique</p>
             </div>
             <div  className='border py-8 rounded-xl shadow-xl' >
+            <img class="pt-2 mt-4 hero container max-w-screen-lg mx-auto pb-10 flex w-[160px] h-[220px] md:w-[176px] md:h-[198px]" src={github}></img>
                 <p className='text-6xl font-bold text-indigo-600'></p>
                 <p className='text-gray-400 mt-2'>Github</p>
             </div>
