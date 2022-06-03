@@ -126,7 +126,7 @@ export default function Signup() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="/signin" className='underline'>
+                <Link to="/login" className='underline'>
                  Already have an account?
                 </Link>
               </Grid>
