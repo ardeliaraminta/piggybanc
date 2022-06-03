@@ -15,9 +15,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React from 'react'
 import { useState } from 'react';
-import SignUp from './signup';
 
-export default function Login() {
+export default function Signup() {
   const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
     const SignInWithGoogle = () =>{
@@ -75,7 +74,7 @@ export default function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign up
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -100,6 +99,17 @@ export default function Login() {
               autoComplete="current-password"
               className='border-white'
             />
+             <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="Re-enter password"
+              label="Re-enter password"
+              type="Re-enter password"
+              id="Re-enter password"
+              autoComplete="Re-enter password"
+              className='border-white'
+            />
             {errorMessage && (<p className="error"> Error! {errorMessage} </p>)}
             <Button
               type="submit"
@@ -107,7 +117,7 @@ export default function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Sign up
             </Button>
             <Grid container>
               <Grid item xs>
@@ -116,8 +126,8 @@ export default function Login() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="/signup" className='underline'>
-                  Don't have an account?
+                <Link to="/signin" className='underline'>
+                 Already have an account?
                 </Link>
               </Grid>
             </Grid>
