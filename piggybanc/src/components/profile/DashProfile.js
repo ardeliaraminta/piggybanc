@@ -84,7 +84,7 @@ const DashProfile = () => {
     style={{
         borderRadius: 30,
         backgroundColor: "black",
-        padding: "18px 20px",
+        padding: "12px 18px",
         fontSize: "14px",
     }}
     variant="contained"

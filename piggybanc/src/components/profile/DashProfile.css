@@ -1,8 +1,4 @@
-.dashprof{
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-}
+
 
 @media screen and (max-width: 1200px) {
     .dashprof{
