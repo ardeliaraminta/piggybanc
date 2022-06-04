@@ -1,87 +1,68 @@
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import "./Table.css";
+import React from 'react'
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
+import Button from '@mui/material/Button';
 
-function createData(date, details, category, amount, addedBy) {
-  return { date, details, category, amount, addedBy};
-}
-
-const rows = [
-  createData("1/9/22", "Rujak Enak", "Food", "$2", "Manually"),
-  createData("1/9/22", "Sewa Lamborghini", "Transportation", "$40", "Upload"),
-  createData("1/9/22", "Electricity", "Rent", "$150", "Manually"),];
-
-
-const makeStyle=(status)=>{
-  if(status === 'Manually')
-  {
-    return {
-      background: 'rgb(145 254 159 / 47%)',
-      color: 'green',
-    }
-  }
-  else if(status === 'Upload')
-  {
-    return{
-      background: '#ffadad8f',
-      color: 'red',
-    }
-  }
-  else{
-    return{
-      background: '#59bfff',
-      color: 'black',
-    }
-  } 
-}
-
-export default function BasicTable() {
+const Table = () => {
   return (
-      <div className="Table">
-      <h3>Expenses History</h3>
-        <TableContainer
-          component={Paper}
-          style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
-        >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>History</TableCell>
-                <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Details</TableCell>
-                <TableCell align="left">Category</TableCell>
-                <TableCell align="left">Amount</TableCell>
-                <TableCell align="left">AddedBy</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody style={{ color: "white" }}>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell>
-                  <TableCell align="left">{row.date}</TableCell>
-                  <TableCell align="left">{row.details}</TableCell>
-                  <TableCell align="left">{row.category}</TableCell>
-                  <TableCell align="left">{row.amount}</TableCell> 
-                  <TableCell align="left">
-                    <span className="status" style={makeStyle(row.addedBy)}>{row.addedBy}</span>
-                  </TableCell>
-                  <TableCell align="left" className="Details"></TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+    <>
+    <div className='dashprof'>
+          <h1 className='text-white'> Add New Entry</h1>
+          
+        <div className='grid md:grid-cols-3 gap-6 px-2 text-center'>
+            <div className='border py-8 rounded-xl shadow-xl' >
+                <p className='text-6xl font-bold text-indigo-600'></p>
+                <p className='text-gray-400 mt-2'>
+                <MDBContainer>
+      <MDBRow>
+        <MDBCol md="6">
+          <form>
+              <MDBInput
+                label="+ Add Income"
+                icon="lock"
+                group
+                type="password"
+                validate
+                error="wrong"
+                success="right"
+              />
+               <MDBInput
+               label="+ Add expenses"
+                icon="lock"
+                group
+                type="text"
+                validate
+                error="wrong"
+                success="right"
+                />
+               <Button
+    style={{
+        borderRadius: 30,
+        backgroundColor: "black",
+        padding: "12px 18px",
+        fontSize: "12px",
+    }}
+    variant="contained"
+    >
+    Add
+</Button>
+          </form>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
+                </p>
+
+            
+
+      
+          
       </div>
-  );
+      </div>
+      </div>
+      </>
+
+
+  )
 }
+
+
+export default Table

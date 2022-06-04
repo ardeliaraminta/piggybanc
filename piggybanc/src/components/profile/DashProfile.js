@@ -13,7 +13,7 @@ const DashProfile = () => {
         event.preventDefault();
         const data = new FormData(event.target);
         const value = Object.fromEntries(data.entries());
-        value.entry = data.getAll("entry");
+        value.entry = data.getAll("success");
         console.log({ value });
       }
     
