@@ -20,12 +20,6 @@ import SignUp from './signup';
 export default function Login() {
   const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const SignInWithGoogle = () =>{
-        signInWithPopup(auth,provider).then(()=> {
-            // localStorage.setItem("isAuth", true);
-            navigate("/dashboard")
-        });
-    }
     
     const theme = createTheme({
       palette: {
@@ -122,14 +116,9 @@ export default function Login() {
               </Grid>
             </Grid>
           </Box>
-          <Grid sx={{mt:2}}>- or -</Grid>
         </Box>
       </Container>
     </ThemeProvider>
-
-      <div className='flex flex-col items-center p-5'>
-        <GoogleButton type="dark" onClick={SignInWithGoogle}/>
-      </div>
 
       </>
   )

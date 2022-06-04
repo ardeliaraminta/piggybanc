@@ -55,7 +55,7 @@ export const cardsData = [
 
     },
      {
-            title: "Summary",
+            title: "Income",
             color:{
                 backGround: "linear-gradient(to bottom right, #08143D, #122f8e)",
                 boxShadow: "0px 10px 20px 0px #e0c6f5"
@@ -84,6 +84,12 @@ export const UpdatesData = [
         name: "Transportation",
         noti:"spent $40 dollars for Lamborghini ",
         time:"24 minutes ago",
+
+    },
+    {
+        name: "Rent",
+        noti:"spent $150 dollars for Electricity",
+        time:"1 hour ago",
 
     },
     {

@@ -13,21 +13,21 @@ export default function Team() {
         </div>
 
         <div className='grid md:grid-cols-3 gap-6 px-2 text-center'>
-            <div className='border py-8 rounded-xl shadow-xl' >
+        <a href="https://www.linkedin.com/in/monique-senjaya-06a33115a/"><div className='border py-8 rounded-xl shadow-xl' >
             <img class="pt-2 mt-4 hero container max-w-screen-lg mx-auto pb-10 flex w-[160px] h-[200px] md:w-[176px] md:h-[198px]" src={linkedin}></img>
                 <p className='text-6xl font-bold text-indigo-600'></p>
                 <p className='text-gray-400 mt-2'>Monique</p>
-            </div>
-            <div  className='border py-8 rounded-xl shadow-xl' >
+            </div></a>
+            <a href="https://github.com/moniquesenjaya/piggybanc"><div  className='border py-8 rounded-xl shadow-xl' >
             <img class="pt-2 mt-4 hero container max-w-screen-lg mx-auto pb-10 flex w-[160px] h-[220px] md:w-[176px] md:h-[198px]" src={github}></img>
                 <p className='text-6xl font-bold text-indigo-600'></p>
                 <p className='text-gray-400 mt-2'>Github</p>
-            </div>
-            <div className='border py-8 rounded-xl shadow-xl' >
-            <img class="pt-2 mt-4 hero container max-w-screen-lg mx-auto pb-10 flex w-[200px] h-[230px] md:w-[176px] md:h-[198px]" src={linkedin}></img>
+            </div></a>
+            <a href='https://www.linkedin.com/in/ardelia-araminta-b19358201/'><div className='border py-8 rounded-xl shadow-xl' >
+           <img class="pt-2 mt-4 hero container max-w-screen-lg mx-auto pb-10 flex w-[200px] h-[230px] md:w-[176px] md:h-[198px]" src={linkedin}></img>
                 <p className='text-6xl font-bold text-indigo-600'></p>
                 <p className='text-gray-400 mt-2'>Ardelia</p>
-            </div>
+            </div></a>
         </div>
     </div>
 </div>

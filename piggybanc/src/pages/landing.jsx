@@ -21,10 +21,6 @@ const Landing = () => {
           <Footer/>
       </div>
 
-      <div className='h-[4000px] border-1'>
-
-      </div>
-
       
       
        

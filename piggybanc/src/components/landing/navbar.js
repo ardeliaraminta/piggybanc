@@ -34,7 +34,7 @@ function Navbar() {
         <a className='px-5 font-[600] text-[15px] sm:text-[20px] hover:scale-105 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1'>Overview</a>
         <a className='px-5 font-[600] text-[15px] sm:text-[20px] hover:scale-105 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1'>Why Us?</a>
         <a className='px-5 font-[600] text-[15px] sm:text-[20px] hover:scale-105 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1'>Team</a>
-        <Link to="/login"><div className='px-5 hover:scale-10 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1 pb-3 '><Button variant="contained" classname="text-[13px] sm:text-[20px]" size="small" sx={{paddingX:3, fontFamily:'Inter', fontWeight:600, background: 'linear-gradient(45deg,  #748AFF 20%, #FFFAFA 90%)'}}>Login</Button></div></Link>
+        <Link to="/login"><div className='px-5 hover:scale-10 hover:cursor-pointer transition duration-300 ease-in-out hover:-translate-y-1 py-1 pb-3 '><Button variant="contained" classname="text-[13px] sm:text-[20px]" size="small" sx={{paddingX:3, fontFamily:'Inter', color:'#000', fontWeight:600, background: 'linear-gradient(45deg,  #748AFF 20%, #FFFAFA 90%)'}}>Login</Button></div></Link>
       </div>
     </div>
     </nav>

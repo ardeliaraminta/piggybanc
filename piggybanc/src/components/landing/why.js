@@ -7,7 +7,7 @@ import rocket from '../../assets/rocket.png';
 export default function Why() {
   return (
     <div name='support' className='w-full mt-24'>
-    <div className='w-full h-[700px] bg-gray-900/90 absolute'>
+    <div className='w-full h-[800px] bg-gray-900/90 absolute'>
     </div>
     
     <div className='max-w-[1240px] mx-auto text-white relative'>
