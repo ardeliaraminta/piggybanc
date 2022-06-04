@@ -3,16 +3,6 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
 import Button from '@mui/material/Button';
 
 const Table = () => {
-  function handleSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    const value = Object.fromEntries(data.entries());
-    value.entry = data.getAll("success");
-    console.log({ value });
-  }
-
-  const form = document.querySelector("form");
-  form.addEventListener("submit", handleSubmit);
   
   return (
     <>
