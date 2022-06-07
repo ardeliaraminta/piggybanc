@@ -7,6 +7,7 @@ import './dashboard.css'
 import SidebarProfile from '../components/profile/SidebarProfile'
 import DashProfile from '../components/profile/DashProfile'
 import ImageUploading from 'react-images-uploading';
+import Sidebar from '../components/dashboard/Sidebar'
 
 export default function Profile() {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function Profile() {
       <>
        <div className="App">
       <div className='AppGlass'>
-        <SidebarProfile/>
+        <Sidebar/>
         <DashProfile/>
         <ImageUploading
         multiple

@@ -3,24 +3,36 @@ import './Sidebar.css'
 import piggylogo from '../../assets/piggylogo.png'
 import { SidebarData } from '../data/data'
 import { useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
 
 const Sidebar = () => {
     const navigates = useNavigate();
-    const [selected, setSelected] = useState(0)
+    const [cookies, setCookies, removeCookies] = useCookies("email")
+    const [selected, setSelected] = useState('')
+
     const navigate = (index, item) => {
         setSelected(index)
-        }
+    }
+
+    const logoutUser = () => {
+        removeCookies("email", {path:"/"})
+        return navigates("/")
+    } 
+
     useEffect(()=>{
         console.log(selected)
         switch (selected) {
-            case 0:
+            case "Dashboard":
                 return navigates("/dashboard");
-            case 1:
+            case "Transaction":
                 return navigates("/transaction")
-            case 2:
+            case "Profile":
                 return navigates("/profile")
+            default:
+                return null;
         }
     }, [selected])
+
     return (
         <div className='Sidebar'>
             {/* {logo} */}
@@ -39,7 +51,7 @@ const Sidebar = () => {
                     return (
                         <div className={selected === index ? 'menuItem active' : 'menuItem'}
                             key={index}
-                            onClick={() => setSelected(index)}
+                            onClick={() => setSelected(item.heading)}
                         >
                             <item.icon />
                             <span>
@@ -49,7 +61,7 @@ const Sidebar = () => {
                     )
 
                 })}
-                <button onClick={(e) => navigates("/")}> Logout </button>
+                <button onClick={logoutUser}> Logout </button>
             </div>
         </div>
     )
