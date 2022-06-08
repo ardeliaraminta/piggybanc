@@ -16,6 +16,7 @@ export default function Dashboard() {
     const [expenses, setExpenses] = useState("") ;
     const [balance, setBalance] = useState("") ;
     const [cookie, setCookie] = useCookies("email");
+
     useEffect(async () => {
       const getUser = async() => {
         try{
@@ -26,17 +27,37 @@ export default function Dashboard() {
           console.log(err);
         }
       }
-      const getTx = async() => {
+      const getEx = async() => {
         try{
-          const res = await axios.get(`https://piggybanc-backend.herokuapp.com/tx?email=monique@gmail.com&type=Expense`, {headers:{"Authorization": cookie.token}});
-          console.log(res);
+          const res = await axios.get(`/tx`, {headers:{"Authorization": cookie.token}, params:{"email": cookie.email, "type":"Expense"}});
+          let expense = 0;
+          for (let i = 0; i < res.data.length; i++) {
+            expense += res.data[i].amount;
+          } 
+          console.log(expense);
+          setExpenses(expense)
           
         }catch(err){
           console.log(err);
         }
       }
+      const getIn = async() => {
+        try{
+          const res = await axios.get(`/tx`, {headers:{"Authorization": cookie.token}, params:{"email": cookie.email, "type":"Income"}});
+          let income = 0;
+          for (let i = 0; i < res.data.length; i++) {
+            income += res.data[i].amount;
+          } 
+          console.log(income);
+          setIncome(income)
+          
+        }catch(err){
+          console.log(err);
+        }
+      }
+      await getIn();
       await getUser();
-      await getTx();
+      await getEx();
     }, [])
     
     

@@ -9,6 +9,7 @@ const Cards = ({balance, expenses, income}) => {
     <div className='Cards'>
         {cardsData.map((card, id)=>{
             return(
+              //i already pass the expense and income with the bal, just have to display it here :D
                 <div className="parentContainer">
                     <Card
                     title = {card.title}

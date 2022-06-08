@@ -1,9 +1,37 @@
 import React from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
 import Button from '@mui/material/Button';
+import axios from 'axios';
+import { useState } from 'react';
+import {useCookies} from 'react-cookie';
 
 const Table = () => {
-  
+  const [details, setDetails] = useState("") ;
+  const [category, setCategory] = useState("") ;
+  const [amount, setAmount] = useState("") ;
+  const [type, setType] = useCookies("");
+  const [cookies, setCookies] = useCookies("email");
+  const [message, setMessage] = useState('');
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const res = await axios.put(`/tx`, {
+        email: cookies.email,
+        details: details,
+        category: category,
+        amount: amount,
+        type: type,
+      }, {
+        headers: {"Authorization": cookies.token}
+      })
+      console.log(res)
+      setMessage("Successfully Added.")
+    }
+
+    catch (err) {
+      console.log(err)
+    }
+  };
   return (
     <>
     <div className='dashprof'>
