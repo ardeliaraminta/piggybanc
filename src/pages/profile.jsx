@@ -4,6 +4,7 @@ import { signOut } from 'firebase/auth'
 import { auth } from '../firebase-config'
 import { useNavigate } from 'react-router-dom'
 import './dashboard.css'
+import './profile.css'
 import SidebarProfile from '../components/profile/SidebarProfile'
 import DashProfile from '../components/profile/DashProfile'
 import ImageUploading from 'react-images-uploading';

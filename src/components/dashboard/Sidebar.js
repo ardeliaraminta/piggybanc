@@ -4,6 +4,7 @@ import piggylogo from '../../assets/piggylogo.png'
 import { SidebarData } from '../data/data'
 import { useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie';
+import Button from '@mui/material/Button';
 
 const Sidebar = () => {
     const navigates = useNavigate();
@@ -61,7 +62,9 @@ const Sidebar = () => {
                     )
 
                 })}
-                <button onClick={logoutUser}> Logout </button>
+                <div className='logout'>
+                <Button variant="contained" onClick={logoutUser} classname="h-12 px-6 m-2 text-[13px] sm:text-[20px] text-black" size="medium" sx={{paddingX:3, fontFamily:'Inter', color:'#000', fontWeight:600, background: 'linear-gradient(50deg,  #748AFF 20%, #FFFAFA 90%)'}}> Logout </Button>
+                </div>
             </div>
         </div>
     )

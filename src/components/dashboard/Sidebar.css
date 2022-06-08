@@ -6,6 +6,9 @@
     transition: all 300ms ease;
 }
 
+.logout{
+  color: white;
+}
 .logo{
     display: flex;
     height: 5rem;
