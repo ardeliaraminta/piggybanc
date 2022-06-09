@@ -1,11 +1,8 @@
 import { Button } from '@mui/material'
-import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth'
-import { auth, provider } from '../firebase-config'
 import { useNavigate } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import GoogleButton from 'react-google-button'
 import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -21,6 +18,12 @@ export default function Signup() {
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confPassword, setconfPassword] = useState('');
+  const [emailErr, setemailErr] = useState('');
+  const [passwordErr, setpasswordErr] = useState('');
+  const [confPasswordErr, setconfPasswordErr] = useState('');
+
+  const set = 5; 
     const navigate = useNavigate();
 
     
@@ -39,6 +42,29 @@ export default function Signup() {
       },
     });
 
+    const handleChange = (e, name) => {
+      const user = {};
+      const emailRegEx = RegExp(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+      user[name] = e.target.value;
+      switch (name) {
+        case 'email':
+          setEmail(user.email);
+          !emailRegEx.test(user.email) ? setemailErr('Invalid Email!') : setemailErr('');
+          break;
+        case 'password':
+          setPassword(user.password);
+          user.password.length < 8 ? setpasswordErr('Password must be at least 8 characters!') : setpasswordErr('');
+          break;
+        case 'confPassword':
+          setconfPassword(user.confPassword);
+          user.confPassword !== password ? setconfPasswordErr('Passwords do not match!') : setconfPasswordErr('');
+          break;
+        default:
+          break;
+      }
+    }
     const handleSubmit = async (event) => {
       event.preventDefault();
       try{
@@ -84,6 +110,8 @@ export default function Signup() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              error={email != email.includes("@")}
+              helperText={email.includes("@") ? "" : "Invalid Email!"}
               autoFocus
               sx={{ input: { color: 'white' } }}
             />
@@ -91,23 +119,27 @@ export default function Signup() {
               onChange={e=>setPassword(e.currentTarget.value)}
               margin="normal"
               required
-              fullWidth
+              fullWidth 
               name="password"
               label="Password"
               type="password"
               id="password"
+              // error={}
+              // helperText={}
               autoComplete="current-password"
               className='border-white'
             />
              <TextField
               margin="normal"
-              onChange={e=>setPassword(e.currentTarget.value)}
+              onChange={e=>setconfPassword(e.currentTarget.value)}
               required
               fullWidth
               type="password"
-              name="Re-enter password"
+              name="confPassword"
               label="Re-enter password"
               id="Re-enter password"
+              error={ confPassword != password}
+              helperText={confPassword === password ? "" : "Password does not match! "}
               autoComplete="Re-enter password"
               className='border-white'
             />
