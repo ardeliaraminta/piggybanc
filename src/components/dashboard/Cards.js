@@ -5,6 +5,7 @@ import Card from './Card'
 import './Cards.css'
 
 const Cards = ({balance, expenses, income}) => {
+
   return (
     <div className='Cards'>
         {cardsData.map((card, id)=>{

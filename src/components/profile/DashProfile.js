@@ -162,14 +162,6 @@ return (
               </MDBRow>
             </MDBContainer>
           </p>
-
-
-
-
-
-
-
-          <ProfileTab />
         </div>
       </div>
     </div>
