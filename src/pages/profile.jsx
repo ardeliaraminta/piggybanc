@@ -9,24 +9,32 @@ import SidebarProfile from '../components/profile/SidebarProfile'
 import DashProfile from '../components/profile/DashProfile'
 import ImageUploading from 'react-images-uploading';
 import Sidebar from '../components/dashboard/Sidebar'
-
+import axios from 'axios'
 export default function Profile() {
     const navigate = useNavigate();
+    const [message, setMessage] = ""
     const maxNumber = 1;
     const [images, setImages] = React.useState([]);
-    const SignUserOut = () =>{
-        signOut(auth).then(()=>{
-            // localStorage.clear();
-            // window.location.href="/"
-            navigate("/")
-        })
-    }
+
     const onChange = (imageList, addUpdateIndex) => {
       // data for submit
       console.log(imageList, addUpdateIndex);
       setImages(imageList);
       console.log(imageList[0].data_url)
     };
+
+    // const onSubmit = async (event, imageList) => {
+    //   event.preventDefault();
+    //   try{
+    //     const res = await axios.post("/ocr-ktp", {
+    //       images: [imageList[0].data_url]
+    //     })
+    //     console.log(res)
+        
+    //   }catch(err){
+    //     console.log(err)
+    //   }
+    // };
   return (
       <>
        <div className="App">
@@ -66,6 +74,7 @@ export default function Profile() {
                 <div className="image-item__btn-wrapper">
                   <button onClick={() => onImageUpdate(index)}>Update</button>
                   <button onClick={() => onImageRemove(index)}>Remove</button>
+                  {/* <button onClick={onSubmit}>Submit</button> */}
                 </div>
               </div>
             ))}
@@ -74,8 +83,6 @@ export default function Profile() {
       </ImageUploading>
       </div> 
     </div>
-        <div>Dashboard</div>
-        <Button variant="contained" onClick={SignUserOut}>Sign out</Button>
 
       </>
    

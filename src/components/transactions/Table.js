@@ -6,6 +6,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
+import axios from "axios";
 
 function createData(date, details, category, amount, addedBy) {
   return { date, details, category, amount, addedBy};
@@ -41,6 +44,19 @@ const makeStyle=(status)=>{
 }
 
 export default function BasicTable() {
+  const [cookie, setCookie] = useCookies("email");
+  useEffect(async () => {
+  const getUpdate = async() => {
+      try{
+        const res = await axios.get(`/tx`, {headers:{"Authorization": cookie.token}, params:{"email": cookie.email, "type":"Income"}});
+        console.log(res.data);
+      }catch(err){
+        console.log(err);
+      }
+      
+    }
+    await getUpdate();
+  }, [])
   return (
       <div className="text-white">
       <h3>Income History</h3>
