@@ -62,13 +62,13 @@ return (
     <div className='dashprof'>
       <h1 className='text-white'>  </h1>
 
-      <div className='grid md:grid-cols-2 gap-6 px-2 text-center'>
-        <div className='border py-20 px-60 rounded-xl shadow-xl' >
+      <div className='grid md:grid-cols-4 gap-10 px-2'>
+        <div className='border py-20 px-40 rounded-xl shadow-xl' >
           <p className='text-6xl font-bold text-indigo-600'></p>
           <p className='text-gray-400 mt-2'>
             <MDBContainer>
               <MDBRow>
-                <MDBCol md="6">
+                <MDBCol md="10">
                   <form>
                     <p className="h5 text-center mb-4 text-[18px] font-extrabold">Edit Profile</p>
                     <div className="grey-text">
@@ -147,7 +147,7 @@ return (
                       onClick={async (e) => handleSubmit(e)}
                         style={{
                           borderRadius: 30,
-                          backgroundColor: "black",
+                          backgroundColor: "#273250",
                           padding: "12px 18px",
                           fontSize: "14px",
                         }}
