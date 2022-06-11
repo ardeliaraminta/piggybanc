@@ -62,15 +62,15 @@ return (
     <div className='dashprof'>
       <h1 className='text-white'>  </h1>
 
-      <div className='grid md:grid-cols-3 gap-6 px-2 text-center'>
-        <div className='border py-8 rounded-xl shadow-xl' >
+      <div className='grid md:grid-cols-2 gap-6 px-2 text-center'>
+        <div className='border py-20 px-60 rounded-xl shadow-xl' >
           <p className='text-6xl font-bold text-indigo-600'></p>
           <p className='text-gray-400 mt-2'>
             <MDBContainer>
               <MDBRow>
                 <MDBCol md="6">
                   <form>
-                    <p className="h5 text-center mb-4">Edit Profile</p>
+                    <p className="h5 text-center mb-4 text-[18px] font-extrabold">Edit Profile</p>
                     <div className="grey-text">
                       <MDBInput
                         label="Email"
