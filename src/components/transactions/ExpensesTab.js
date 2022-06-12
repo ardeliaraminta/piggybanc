@@ -47,7 +47,7 @@ export default function BasicTable() {
   useEffect(async () => {
     const getUpdate = async() => {
       try{
-        const res = await axios.get(`/tx`, {headers:{"Authorization": cookie.token}, params:{"email": cookie.email, "type":"Expense"}});
+        const res = await axios.get(`https://piggy-be.herokuapp.com/tx`, {headers:{"Authorization": cookie.token}, params:{"email": cookie.email, "type":"Expense"}});
         console.log(res.data);
       }catch(err){
         console.log(err);

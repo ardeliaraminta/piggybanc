@@ -19,7 +19,7 @@ const DashProfile = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const res = await axios.put(`/user/update`, {
+      const res = await axios.put("https://piggy-be.herokuapp.com/user/update", {
         email: cookies.email,
         name: name,
         dob: dob,
@@ -42,7 +42,7 @@ const DashProfile = () => {
   useEffect(async () => {
     const getUser = async() => {
       try{
-        const res = await axios.get(`/user/${cookies.email}`);
+        const res = await axios.get(`https://piggy-be.herokuapp.com/user/${cookies.email}`);
         setName(res.data.name)
         setAddress(res.data.address)
         setDOB(res.data.dob)
@@ -144,7 +144,7 @@ return (
                         success="right"
                       />
                       <Button
-                      onClick={async (e) => handleSubmit(e)}
+                      onClick={async (e) => await handleSubmit(e)}
                         style={{
                           borderRadius: 30,
                           backgroundColor: "black",

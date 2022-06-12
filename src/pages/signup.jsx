@@ -68,7 +68,7 @@ export default function Signup() {
     const handleSubmit = async (event) => {
       event.preventDefault();
       try{
-        const res = await axios.post("/user", {
+        const res = await axios.post("https://piggy-be.herokuapp.com/user", {
           email: email,
           password: password
         })

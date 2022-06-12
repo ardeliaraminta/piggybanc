@@ -56,7 +56,7 @@ export default function Login() {
     //   setErrorMessage(errorCode,errorMessage);
     // });
 
-    const res = await axios.post('/user/login', {
+    const res = await axios.post('https://piggy-be.herokuapp.com/user/login', {
       email: email,
       password: password,
     })
