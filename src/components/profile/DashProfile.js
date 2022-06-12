@@ -70,7 +70,7 @@ return (
               <MDBRow>
                 <MDBCol md="10">
                   <form>
-                    <p className="h5 text-center mb-4 text-[18px] font-extrabold">Edit Profile</p>
+                    <p className="h5 text-center mb-4 text-[22px] font-extrabold">Edit Profile</p>
                     <div className="grey-text">
                       <MDBInput
                         label="Email"
@@ -146,7 +146,6 @@ return (
                       <Button
                       onClick={async (e) => handleSubmit(e)}
                         style={{
-                          borderRadius: 30,
                           backgroundColor: "#273250",
                           padding: "12px 18px",
                           fontSize: "14px",

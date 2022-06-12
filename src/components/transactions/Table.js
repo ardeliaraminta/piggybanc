@@ -68,14 +68,12 @@ export default function BasicTable() {
             <TableHead>
               <TableRow>
                 <TableCell>History</TableCell>
-                <TableCell align="left">Date</TableCell>
                 <TableCell align="left">Details</TableCell>
                 <TableCell align="left">Category</TableCell>
                 <TableCell align="left">Amount</TableCell>
-                <TableCell align="left">AddedBy</TableCell>
               </TableRow>
             </TableHead>
-            <TableBody style={{ color: "white" }}>
+            <TableBody style={{ color: "grey" }}>
               {rows.map((row) => (
                 <TableRow
                   key={row.name}
@@ -84,12 +82,10 @@ export default function BasicTable() {
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-                  <TableCell align="left">{row.date}</TableCell>
                   <TableCell align="left">{row.details}</TableCell>
                   <TableCell align="left">{row.category}</TableCell>
                   <TableCell align="left">{row.amount}</TableCell> 
                   <TableCell align="left">
-                    <span className="status" style={makeStyle(row.addedBy)}>{row.addedBy}</span>
                   </TableCell>
                   <TableCell align="left" className="Details"></TableCell>
                 </TableRow>

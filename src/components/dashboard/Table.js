@@ -90,7 +90,7 @@ const Table = () => {
                         label="Details"
                         onChange={(e) => setDetails(e.currentTarget.value)}
                         group
-                        type="password"
+                        type="text"
                         validate
                         error="wrong"
                         success="right"
