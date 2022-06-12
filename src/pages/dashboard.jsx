@@ -19,11 +19,7 @@ export default function Dashboard() {
   useEffect(async () => {
     const getUser = async () => {
       try {
-<<<<<<< HEAD
         const res = await axios.get(`https://piggy-be.herokuapp.com/user/${cookie.email}`);
-=======
-        const res = await axios.get(`/user/${cookie.email}`);
->>>>>>> 591648f4178357851293552c3cfe37492d123e03
         console.log(res);
         money.push(res.data.balance)
 
@@ -35,11 +31,7 @@ export default function Dashboard() {
       try {
         const res = await axios({
           method: "get",
-<<<<<<< HEAD
           url: "https://piggy-be.herokuapp.com/tx",
-=======
-          url: "/tx",
->>>>>>> 591648f4178357851293552c3cfe37492d123e03
           params: {
             email: cookie.email,
             type: "Expense"
