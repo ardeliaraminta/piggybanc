@@ -7,23 +7,34 @@ import { useEffect } from 'react';
 const Updates = () => {
   const [cookie, setCookie] = useCookies("email");
   const [data, setData] = useState([])
-
+  const info = [];
 
   useEffect(async () => {
-    const getUpdate = async() => {
-      try{
-        const res = await axios.get(`/tx`, {headers:{"Authorization": cookie.token}, params:{"email": cookie.email, "type":"Expense"}});
-        console.log(res.data);
-        res.data.map((tx)=>{
-          setData(data.push(tx))
+    const getTransactions = async () => {
+      try {
+        const res = await axios.get('/tx', {
+          headers: {
+            Authorization: cookie.token
+          },
+          params: {
+            email: cookie.email
+          }
         })
-      }catch(err){
-        console.log(err);
+        res.data.forEach(entry => {
+          info.push({
+            category: entry.category,
+            details: entry.details,
+            timestamps: entry.updatedAt
+          })
+        })
+      } catch (error) {
+        console.log(error)
       }
-      
     }
-    await getUpdate();
+    await getTransactions();
+    setData(info)
   }, [])
+
 
 
   

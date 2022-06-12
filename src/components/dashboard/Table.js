@@ -10,17 +10,18 @@ const Table = () => {
   const [details, setDetails] = useState("");
   const [category, setCategory] = useState("");
   const [amount, setAmount] = useState("");
-  const [type, setType] = useCookies("");
+  const [type, setType] = useState("");
   const [cookies, setCookies] = useCookies("email");
   const [message, setMessage] = useState('');
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const res = await axios.put(`/tx`, {
+      const res = await axios.post("/tx", {
         email: cookies.email,
         details: details,
         category: category,
-        amount: amount,
+        amount: Number(amount),
         type: type,
       }, {
         headers: { "Authorization": cookies.token }
@@ -34,44 +35,24 @@ const Table = () => {
     }
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     const getTransactions = async () => {
       try {
-        const res = await axios.get("https://piggybanc-backend.herokuapp.com/tx", {
+        const res = await axios.get('/tx', {
           headers: {
+            Authorization: cookies.token
+          },
+          params: {
             email: cookies.email
           }
         })
-
+        console.log(res)
       } catch (error) {
         console.log(error)
       }
-
     }
-
+    await getTransactions();
   }, [])
-
-
-
-  const createTx = async () => {
-    try {
-      const res = await axios.post("https://piggybanc-backend.herokuapp.com/tx", {
-        email: cookies.email,
-        details: "",
-        category: "",
-        amount: "",
-        type: "",
-      })
-   
-
-    } catch (error) {
-      console.log(error)
-    }
-
-  }
-
-
-
 
   return (
     <>
@@ -90,7 +71,7 @@ const Table = () => {
                         label="Details"
                         onChange={(e) => setDetails(e.currentTarget.value)}
                         group
-                        type="text"
+                        type="test"
                         validate
                         error="wrong"
                         success="right"
@@ -123,7 +104,7 @@ const Table = () => {
                         success="right"
                       />
                       <Button
-                        onSubmit={ async (e) => createTx()}
+                        onClick={async (e) => handleSubmit(e)}
                         style={{
                           borderRadius: 30,
                           backgroundColor: "black",

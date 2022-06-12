@@ -14,14 +14,14 @@ module.exports = function (app) {
   );
   app.use(
     createProxyMiddleware('/user', {
-      target: 'https://piggybanc-backend.herokuapp.com/', // API endpoint 1
+      target: 'https://piggy-be.herokuapp.com/', // API endpoint 1
       changeOrigin: true
     })
   );
 
   app.use(
     createProxyMiddleware('/tx', {
-      target: 'https://piggybanc-backend.herokuapp.com/', // API endpoint 1
+      target: 'https://piggy-be.herokuapp.com/', // API endpoint 1
       changeOrigin: true
     })
   );
