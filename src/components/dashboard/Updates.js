@@ -12,7 +12,11 @@ const Updates = () => {
   useEffect(async () => {
     const getTransactions = async () => {
       try {
+<<<<<<< HEAD
         const res = await axios.get('https://piggy-be.herokuapp.com/tx', {
+=======
+        const res = await axios.get('/tx', {
+>>>>>>> 591648f4178357851293552c3cfe37492d123e03
           headers: {
             Authorization: cookie.token
           },

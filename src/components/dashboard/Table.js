@@ -17,7 +17,11 @@ const Table = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+<<<<<<< HEAD
       const res = await axios.post("https://piggy-be.herokuapp.com/tx", {
+=======
+      const res = await axios.post("/tx", {
+>>>>>>> 591648f4178357851293552c3cfe37492d123e03
         email: cookies.email,
         details: details,
         category: category,
@@ -38,7 +42,11 @@ const Table = () => {
   useEffect(async () => {
     const getTransactions = async () => {
       try {
+<<<<<<< HEAD
         const res = await axios.get('https://piggy-be.herokuapp.com/tx', {
+=======
+        const res = await axios.get('/tx', {
+>>>>>>> 591648f4178357851293552c3cfe37492d123e03
           headers: {
             Authorization: cookies.token
           },
