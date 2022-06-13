@@ -7,7 +7,7 @@ import axios from "axios";
 import { useCookies } from 'react-cookie';
 
 
-const DashProfile = () => {
+const DashProfile = ({nama,tanggallahir,alamat,pekerjaan,jeniskelamin}) => {
   const [name, setName] = useState('');
   const [dob, setDOB] = useState('');
   const [gender, setGender] = useState('');
@@ -90,7 +90,7 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={name}
+                        value={cookies.name}
                         onChange={e => setName(e.currentTarget.value)}
                         
                       />
@@ -102,18 +102,18 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={dob}
+                        value={cookies.dob}
                         onChange={e => setDOB(e.currentTarget.value)}
                       />
                       <MDBInput
-                        label="Address"
+                        label="Address"      
                         icon="lock"
                         group
                         type="text"
                         validate
                         error="wrong"
                         success="right"
-                        value={address}
+                        value={cookies.address}
                         onChange={e => setAddress(e.currentTarget.value)}
                       />
                       <MDBInput
@@ -124,7 +124,7 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={occupation}
+                        value={cookies.occupation}
                         onChange={e => setOccupation(e.currentTarget.value)}
                       />
                       <MDBInput
@@ -134,7 +134,7 @@ return (
                         type="text"
                         validate
                         error="wrong"
-                        value={gender}
+                        value={cookies.gender}
                         success="right"
                         onChange={e => setGender(e.currentTarget.value)}
                       />

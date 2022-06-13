@@ -14,10 +14,10 @@ import { useState } from 'react'
 import { useCookies } from 'react-cookie';
 export default function Profile() {
     const navigate = useNavigate();
-    const [message, setMessage] = React.useState('');
+    const [message, setMessage] = useState('');
     const maxNumber = 1;
-    const [images, setImages] = React.useState([]);
-    const [final, setFinal]= React.useState();
+    const [images, setImages] = useState([]);
+    const [final, setFinal]= useState();
     const [name, setName] = useState('');
     const [dob, setDOB] = useState('');
     const [gender, setGender] = useState('');
@@ -32,27 +32,10 @@ export default function Profile() {
       setFinal(imageList);
       console.log(imageList[0].data_url)
     };
-
-    const onSubmit = async (event, imageList) => {
-      event.preventDefault();
-      try{
-        const res = await axios.post("/ocr-ktp", {
-          images: [final[0].data_url]
-        })
-        setName(res.data.result[0].nama)
-        setDOB(res.data.result[0].tanggal_lahir)
-        setAddress(res.data.result[0].alamat)
-        setOccupation(res.data.result[0].pekerjaan)
-        setGender(res.data.result[0].jenis_kelamin)
-
-        console.log(name,dob,address,occupation,gender)
-        
-      }catch(err){
-        console.log(err)
-      }
+    const getUpdate = async () => {
       try {
-        event.preventDefault();
-        const res = await axios.put(`/user/update`, {
+        console.log(name,dob,gender)
+        const res = await axios.put(`https://piggy-be.herokuapp.com/user/update`, {
           email: cookies.email,
           name: name,
           dob: dob,
@@ -70,6 +53,36 @@ export default function Profile() {
       catch (err) {
         console.log(err)
       }
+
+    }
+
+    const onSubmit = async (event, imageList) => {
+      event.preventDefault();
+      try{
+        const res = await axios.post("/ocr-ktp", {
+          images: [final[0].data_url]
+        })
+        console.log(res)
+        setName(res.data.result[0].nama)
+        setDOB(res.data.result[0].tanggal_lahir)
+        setAddress(res.data.result[0].alamat)
+        setOccupation(res.data.result[0].pekerjaan)
+        setGender(res.data.result[0].jenis_kelamin)
+        setCookie("name", res.data.result[0].nama, {path: "/"})
+        setCookie("dob",res.data.result[0].tanggal_lahir, {path: "/"})
+        setCookie("address",res.data.result[0].alamat, {path: "/"})
+        setCookie("occupation",res.data.result[0].pekerjaan, {path: "/"})
+        setCookie("gender",res.data.result[0].jenis_kelamin, {path: "/"})
+
+        console.log(name,dob,address,occupation,gender)
+        setTimeout( async ()=>{
+          await getUpdate()
+        },4000)
+        
+      }catch(err){
+        console.log(err)
+      }
+      
     };
   return (
       <>
@@ -77,6 +90,7 @@ export default function Profile() {
       <div className='AppGlass'>
         <Sidebar/>
         <DashProfile/>
+
         <ImageUploading
         multiple
         value={images}
