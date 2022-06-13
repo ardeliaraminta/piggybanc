@@ -17,6 +17,11 @@ const Sidebar = () => {
 
     const logoutUser = () => {
         removeCookies("email", {path:"/"})
+        removeCookies("name", {path:"/"})
+        removeCookies("dob", {path:"/"})
+        removeCookies("occupation", {path:"/"})
+        removeCookies("address", {path:"/"})
+        removeCookies("gender", {path:"/"})
         return navigates("/")
     } 
 
