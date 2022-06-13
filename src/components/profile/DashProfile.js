@@ -43,11 +43,11 @@ const DashProfile = ({nama,tanggallahir,alamat,pekerjaan,jeniskelamin}) => {
     const getUser = async() => {
       try{
         const res = await axios.get(`https://piggy-be.herokuapp.com/user/${cookies.email}`);
-        setName(res.data.name)
-        setAddress(res.data.address)
-        setDOB(res.data.dob)
-        setGender(res.data.gender)
-        setOccupation(res.data.occupation)
+        res.data.name ? setName(res.data.name) : setName(cookies.name)
+        res.data.address ? setAddress(res.data.address) : setAddress(cookies.address)
+        res.data.dob ? setDOB(res.data.dob) : setDOB(cookies.dob)
+        res.data.gender ? setGender(res.data.gender) : setGender(cookies.gender)
+        res.data.occupation ? setOccupation(res.data.occupation) : setOccupation(cookies.occupation)
         console.log(res);
       }catch(err){
         console.log(err);
@@ -90,7 +90,7 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={cookies.name}
+                        value={name}
                         onChange={e => setName(e.currentTarget.value)}
                         
                       />
@@ -102,7 +102,7 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={cookies.dob}
+                        value={dob}
                         onChange={e => setDOB(e.currentTarget.value)}
                       />
                       <MDBInput
@@ -113,7 +113,7 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={cookies.address}
+                        value={address}
                         onChange={e => setAddress(e.currentTarget.value)}
                       />
                       <MDBInput
@@ -124,7 +124,7 @@ return (
                         validate
                         error="wrong"
                         success="right"
-                        value={cookies.occupation}
+                        value={occupation}
                         onChange={e => setOccupation(e.currentTarget.value)}
                       />
                       <MDBInput
@@ -134,7 +134,7 @@ return (
                         type="text"
                         validate
                         error="wrong"
-                        value={cookies.gender}
+                        value={gender}
                         success="right"
                         onChange={e => setGender(e.currentTarget.value)}
                       />
